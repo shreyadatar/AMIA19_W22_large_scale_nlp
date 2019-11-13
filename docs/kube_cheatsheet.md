@@ -18,7 +18,7 @@ kubectl get nodes -o=wide # show IP address, etc.
 ## View kubectl config (allows non-root management of cluster)
 
 ```
-ls -la /home/opensuse/.kube
+ls -la /home/amia/.kube
 ```
 
 ## Display pods
@@ -46,7 +46,7 @@ kubectl get ep --namespace=kube-system # display kube-system namespace
 ## Create dnstools pod from spec
 
 ```
-kubectl create -f /home/opensuse/tutorial/specs/dnstools.yaml
+kubectl create -f /home/amia/tutorial/specs/dnstools.yaml
 ```
 
 ## View pod details and logs
@@ -60,16 +60,16 @@ kubectl logs dnstools
 ## Dig for local cluster resources and get time to response for service/ep in default namespace by servicename.default
 
 ```
-kubectl get service # get service name
-kubectl get ep # show service endpoint
-kubectl exec -ti dnstools -- time dig @10.96.0.10 kubernetes.default
+kubectl get services # get service name; NB: can specify as services and svc
+kubectl get endpointp # show service endpoint; NB: can specify as ep
+kubectl exec -ti dnstools -- time dig @10.96.0.10 kubernetes.default #redirects DNS queries to local cluster DNS
 ```
 
 ## Dig for local cluster resources and get time to response for service/ep in kube-system namespace by servicename.kube-system
 
 ```
 kubectl get service --namespace=kube-system # get service name
-kubectl get ep --namespace=kube-system # show service endpoint
+kubectl get endpoints --namespace=kube-system # show service endpoint
 kubectl exec -ti dnstools -- time dig @10.96.0.10 kube-dns.kube-system
 ```
 
