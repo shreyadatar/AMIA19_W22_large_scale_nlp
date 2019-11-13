@@ -49,12 +49,12 @@
      
 #### 8. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
      docker run -it -e DOCKER='True' -v /home/amia/tutorial:/data nlpieumn/ml 
-     /bin/bash -c python /home/tutorial/ml.py -c svm
+     /bin/bash -c python /home/tutorial/ml.py -c svm # run svm classifier from within docker image
      
 #### 9. Let's use Argo!
-     argo list
-     nano specs/evaluation.yaml
-     argo lint specs/evaluation.yaml
-     argo submit --watch specs/evaluation.yaml
-     argo get <workflow_name>
-     argo logs <pod_name>
+     argo list # list all argo workflopws
+     nano specs/evaluation.yaml 
+     argo lint specs/evaluation.yaml # validate yaml file
+     argo submit --watch specs/evaluation.yaml # submit argo workflow spec and watch status in real time
+     argo get <workflow_name> # list workflow pods in workflow
+     argo logs <pod_name> # view log of pod
