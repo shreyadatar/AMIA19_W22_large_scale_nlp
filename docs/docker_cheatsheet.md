@@ -11,8 +11,11 @@ NB: Also see [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/
 ## Build image in multi-stage Dockerfile:
 Notice the dot at the end (this specifies the directory in which Dockerfile is contained. 
 Also, of note: target tells with block of code to use in the multi-stage build Dockerfile. 
+
+`export DOCKER_BUILDKIT=1` # add as system environment variable
+
 ```
-DOCKER_BUILDKIT=1 docker build -t <image name> --target <target name> .
+docker build -t <image name> --target <target name> .
 
 # valid target names; ml, cnn and vote
 # image names: repository/name, e.g., nlpieumn/ml
@@ -72,7 +75,8 @@ docker run -it -v /home/amia/tutorial/:/data nlpieumn/ml /bin/bash -c python /ho
 ### Example to run default - svm - classifier
 
 ```
-docker run -it -v /home/amia/tutorial/:/data nlpieumn/ml /bin/bash -c python /home/tutorial/ml.py
+docker run -it -v /home/amia/tutorial/:/data nlpieumn/ml /bin/bash -c python /home/tutorial/ml.py -c svm
+# note, svm is the default ml classifier and will be run if no arrgumet is given
 ```
 
 ### Example to run mlp classifier (or log/rf/bag/boost)
