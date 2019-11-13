@@ -36,7 +36,7 @@ argo delete xxx-workflow-name-xxx #use the workflow id returned from the 'submit
 ```
 
 
-## List pods in the workflow status 
+## Dashboard to list pods in the workflow status 
 
 ```
 argo get xxx-workflow-name-xxx #use the workflow id returned from the 'submit' command above
