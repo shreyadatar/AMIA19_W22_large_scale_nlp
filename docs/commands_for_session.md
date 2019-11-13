@@ -21,15 +21,14 @@
      ls /bin
      
 #### 4. Basic Docker Commands (notes: Docker build!)
-     docker images  
+     docker images  # list available docker images on VM 
      docker --help
-     docker pull docker/whalesay
-     docker images
-     docker run docker/whalesay cowsay boo
+     docker pull docker/whalesay # pull docker image from Docker hub
+     docker run docker/whalesay cowsay "Hello W22" # run docker image's version of "Hello World" 
      
 #### 5. Let's use Docker!
-     docker pull nlpieumn/ml
-     docker run -t nlpieumn/ml /bin/bash
+     docker pull nlpieumn/ml # pull ML image from nlpieumn repository
+     docker run -t nlpieumn/ml /bin/bash # ssh into ML image command shell
      
 #### 6. Explore your docker image
      cat /etc/os-release
@@ -37,12 +36,16 @@
      ls /bin 
      exit   # when you're done
      
+#### 7. Build your own docker image
+     cd tutorial
+     docker build -t nlpieumn/vote --target vote . # build image from Dockerfile at target = "vote"
+     
 #### 7. Let's use Kubernetes! (notes: build spec, `kubectl get es/svc`, `kubectl` run dnstools)
-     kubectl get nodes
-     ls /home/amia/.kube
-     kubectl get pods
-     kubectl get pods --all-namespaces
-     kubectl get services
+     kubectl get nodes # list all nodes in cluster
+     ls /home/amia/.kube # list config file that allows unprivileged user to run commands
+     kubectl get pods # list all pods in default namespace
+     kubectl get pods --all-namespaces # list all pods in all namespaces
+     kubectl get services # list all services in default namespace
      
 #### 8. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
      docker run -it -e DOCKER='True' -v /home/amia/tutorial:/data nlpieumn/ml 
@@ -50,9 +53,8 @@
      
 #### 9. Let's use Argo!
      argo list
-     nano evaluation.yaml
-     argo lint evaluation.yaml
-     argo submit evaluation.yaml
-     argo watch <workflow_name>
+     nano specs/evaluation.yaml
+     argo lint specs/evaluation.yaml
+     argo submit --watch specs/evaluation.yaml
      argo get <workflow_name>
      argo logs <pod_name>
