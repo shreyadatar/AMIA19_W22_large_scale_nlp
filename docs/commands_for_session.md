@@ -15,7 +15,7 @@
      nano   # a way to edit text
      vim    # another, more complicated way to edit text
      
-#### 3. Explore your cloud image(notes: use of `-la`, and `~/`, `/home/amia`)
+#### 3. Explore your cloud image(notes: use of `-la` to list with full attributes, and `~/` equivalence to `/home/amia`)
      cat /etc/os-release
      ls /home/amia
      ls /bin
