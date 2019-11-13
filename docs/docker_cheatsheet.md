@@ -9,12 +9,14 @@ docker --help | more
 NB: Also see [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf) 
 
 ## Build image in multi-stage Dockerfile:
-Notice the dot at the end (this specifies the directory in which Dockerfile is contained. 
-Also, of note: target tells with block of code to use in the multi-stage build Dockerfile. 
 
 `export DOCKER_BUILDKIT=1` # add as system environment variable
 
+
 ```
+# Notice the dot at the end (this specifies the directory in which Dockerfile is contained. 
+# Also, of note: target tells with block of code to use in the multi-stage build Dockerfile.
+
 docker build -t <image name> --target <target name> .
 
 # valid target names; ml, cnn and vote
