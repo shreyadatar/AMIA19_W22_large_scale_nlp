@@ -17,7 +17,7 @@
      
 #### 3. Explore your cloud image(notes: use of `-la`, and `~/`, `/home/amia`)
      cat /etc/os-release
-     ls /home/opensuse
+     ls /home/amia
      ls /bin
      
 #### 4. Basic Docker Commands (notes: Docker build!)
