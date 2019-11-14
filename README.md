@@ -22,6 +22,10 @@ This workshop will provide attendees the information necessary to implement NLP 
 - Sijia Liu, Hongfang Liu (Mayo Clinic) 
 - Xiaoqian Jiang (UTHealth)
 
+## References
+
+* This project was based on [Clinical-Acronym-disambiguation](https://github.com/prathamesh1993/Clinical-Acronym-disambiguation) 
+
 ## Acknowledgements
 
 Funding for this work was provided by:
