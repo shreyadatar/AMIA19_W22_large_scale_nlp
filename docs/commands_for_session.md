@@ -40,18 +40,28 @@
      cd tutorial
      docker build -t nlpieumn/vote --target vote . # build image from Dockerfile at target = "vote"
      
-#### 7. Let's use Kubernetes! (notes: build spec, `kubectl get es/svc`, `kubectl` run dnstools)
+#### 8. Let's use Kubernetes! (notes: build spec, `kubectl get es/svc`, `kubectl` run dnstools)
      kubectl get nodes # list all nodes in cluster
      ls /home/amia/.kube # list config file that allows unprivileged user to run commands
      kubectl get pods # list all pods in default namespace
      kubectl get pods --all-namespaces # list all pods in all namespaces
      kubectl get services # list all services in default namespace
      
-#### 8. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
+     Dig for local cluster resources and get time to response for service/ep in kube-system namespace by servicename.kube-           system
+
+     kubectl get service --namespace=kube-system # get service name
+     kubectl get endpoints --namespace=kube-system # show service endpoint
+     kubectl exec -ti dnstools -- time dig @10.96.0.10 kube-dns.kube-system
+
+     Dig for external resources and get time to response
+
+     kubectl exec -ti dnstools -- time dig @10.96.0.10 google.com
+     
+#### 9. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
      docker run -it -e DOCKER='True' -v /home/amia/tutorial:/data nlpieumn/ml 
      /bin/bash -c python /home/tutorial/ml.py -c svm # run svm classifier from within docker image
      
-#### 9. Let's use Argo!
+#### 10. Let's use Argo!
      argo list # list all argo workflopws
      nano specs/evaluation.yaml 
      argo lint specs/evaluation.yaml # validate yaml file
