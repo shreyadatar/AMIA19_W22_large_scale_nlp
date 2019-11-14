@@ -38,7 +38,7 @@
      
 #### 7. Build your own docker image
      cd tutorial
-     docker build -t nlpieumn/vote --target vote . # build image from Dockerfile at target = "vote"
+     docker build -t nlpieumn/vote --target vote . # build image from Dockerfile at target = "vote"; need to set env variable BUILDKIT=1
      
 #### 8. Let's use Kubernetes! (notes: build spec, `kubectl get es/svc`, `kubectl` run dnstools)
      kubectl get nodes # list all nodes in cluster
