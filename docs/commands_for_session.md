@@ -59,7 +59,7 @@
      
 #### 9. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
      docker run -it -e DOCKER='True' -v /home/amia/tutorial:/data nlpieumn/ml 
-     /bin/bash -c python /home/tutorial/ml.py -c svm # run svm classifier from within docker image
+     /bin/bash -c "python /home/tutorial/ml.py -c svm" # run svm classifier from within docker image
      
 #### 10. Let's use Argo!
      argo list # list all argo workflopws
