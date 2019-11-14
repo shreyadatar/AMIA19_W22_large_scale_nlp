@@ -33,5 +33,5 @@
    - su - amia -c "kubectl create rolebinding default-admin --clusterrole=admin --serviceaccount=default:default"
    - su - amia -c "docker pull nlpieumn/cnn"
    - [su, -, amia, -c, "git clone https://github.com/nlpie/AMIA19_W22_large_scale_nlp.git /home/amia/tutorial"]
-   - echo "DOCKER_BUILDKIT=1" >> /home/amia/.bashrc
+   - echo "export DOCKER_BUILDKIT=1" >> /home/amia/.bashrc
    - systemctl restart sshd
