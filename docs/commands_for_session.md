@@ -28,7 +28,7 @@
      
 #### 5. Let's use Docker!
      docker pull nlpieumn/ml # pull ML image from nlpieumn repository
-     docker run -t nlpieumn/ml /bin/bash # ssh into ML image command shell
+     docker run -it nlpieumn/ml /bin/bash # ssh into ML image command shell
      
 #### 6. Explore your docker image
      cat /etc/os-release
