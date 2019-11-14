@@ -24,7 +24,7 @@ This workshop will provide attendees the information necessary to implement NLP 
 
 ## References
 
-* This project was based on [Clinical-Acronym-disambiguation](https://github.com/prathamesh1993/Clinical-Acronym-disambiguation) 
+* This project was based on the work found here: [Clinical-Acronym-disambiguation](https://github.com/prathamesh1993/Clinical-Acronym-disambiguation) 
 
 ## Acknowledgements
 
