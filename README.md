@@ -13,6 +13,7 @@ This workshop will provide attendees the information necessary to implement NLP 
 - `models`: word to index dictionary and the truncated [Glove word embedding](https://nlp.stanford.edu/projects/glove/) models 
 - `scripts`: Python scripts of WSD methods used in the tutorial
 - `specs`: configuration files for argo/k8s.
+- `cloud`: configuration files for VM deployment.
 
 
 ## Contributors
@@ -20,3 +21,11 @@ This workshop will provide attendees the information necessary to implement NLP 
 - Raymond Finzel, Greg Silverman, Shreya Datar, Serguei Pakhomov (University of Minnesota) 
 - Sijia Liu, Hongfang Liu (Mayo Clinic) 
 - Xiaoqian Jiang (UTHealth)
+
+## Acknowledgements
+
+Funding for this work was provided by:
+
+* 5U01TR002062-02
+
+
