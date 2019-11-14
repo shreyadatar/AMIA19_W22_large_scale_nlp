@@ -6,9 +6,11 @@ to query against a list of all hosts in an inventory ini file under the group na
 
 Each host in the group should be listed by row as
 
-`[amia]`
-`<host name/ip 1> ansible_user=amia`
-`...`
-`<host name/ip n> ansible_user=amia`
+```
+[amia]
+<host name/ip 1> ansible_user=amia
+...
+<host name/ip n> ansible_user=amia
+```
 
 
