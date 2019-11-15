@@ -47,7 +47,7 @@
      kubectl get pods --all-namespaces # list all pods in all namespaces
      kubectl get services # list all services in default namespace
      
-     # create a kubernetes pod from a spec file; assume run from `tutorial` directory
+     # create a kubernetes pod from a spec file; assume run from tutorial directory
      kubectl create -f specs/dnstools.yaml kubectl get pods # list all pods in default namespace again and notice the difference from before
      
 ##### Kubernetes network troubleshooting resources 
