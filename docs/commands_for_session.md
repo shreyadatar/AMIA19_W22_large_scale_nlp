@@ -20,7 +20,7 @@
      ls /home/amia
      ls /bin
      
-#### 4. Basic Docker Commands (notes: Docker build!)
+#### 4. Basic Docker Commands 
      docker images  # list available docker images on VM 
      docker --help
      docker pull docker/whalesay # pull docker image from Docker hub
@@ -47,22 +47,26 @@
      kubectl get pods --all-namespaces # list all pods in all namespaces
      kubectl get services # list all services in default namespace
      
-     # create a kubernetes pod from a spec file
+     # create a kubernetes pod from a spec file; assume run from `tutorial` directory
      kubectl create -f specs/dnstools.yaml kubectl get pods # list all pods in default namespace again and notice the difference from before
      
-##### Kubernetes network troubleshooting resources (very useful!)
-     # Advanced network diagnostics (using newly creeated pod) to determine if built-in kubernetes DNS is functiopning properly
+##### Kubernetes network troubleshooting resources 
+     # Advanced network diagnostics (using newly creeated pod) 
+     # Usage: Determine if built-in kubernetes DNS is functioning properly
      
      # Lookup (aka dig) a local cluster resources and get time to response for service/ep in kube-system namespace by servicename.kube-system
+     # Check for internal kubernetes network communications functionality
      
      kubectl get service --namespace=kube-system # get service name
      kubectl get endpoints --namespace=kube-system # show service endpoint name
      kubectl exec -ti dnstools -- time dig @10.96.0.10 kube-dns.kube-system # query by endpoint name
 
      # Lookup for external resources and get time to response
+     # Check for exterrnal network communications functionality
+     
      kubectl exec -ti dnstools -- time dig @10.96.0.10 google.com
      
-#### 9. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
+#### 9. Word Sense Disambiguation (WSD) 
      docker run -it -e DOCKER='True' -v /home/amia/tutorial:/data nlpieumn/ml 
      /bin/bash -c "python /home/tutorial/ml.py -c svm" # run svm classifier from within docker image
      
