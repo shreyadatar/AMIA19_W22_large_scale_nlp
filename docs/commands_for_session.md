@@ -40,21 +40,26 @@
      cd tutorial
      docker build -t nlpieumn/vote --target vote . # build image from Dockerfile at target = "vote"; need to set env variable BUILDKIT=1
      
-#### 8. Let's use Kubernetes! (notes: build spec, `kubectl get es/svc`, `kubectl` run dnstools)
+#### 8. Let's use Kubernetes! 
      kubectl get nodes # list all nodes in cluster
      ls /home/amia/.kube # list config file that allows unprivileged user to run commands
      kubectl get pods # list all pods in default namespace
      kubectl get pods --all-namespaces # list all pods in all namespaces
      kubectl get services # list all services in default namespace
      
-     # Dig for local cluster resources and get time to response for service/ep in kube-system namespace by servicename.kube-           system
-
+     # create a kubernetes pod from a spec file
+     kubectl create -f specs/dnstools.yaml kubectl get pods # list all pods in default namespace again and notice the difference from before
+     
+##### Kubernetes network troubleshooting resources (very useful!)
+     # Advanced network diagnostics (using newly creeated pod) to determine if built-in kubernetes DNS is functiopning properly
+     
+     # Lookup (aka dig) a local cluster resources and get time to response for service/ep in kube-system namespace by servicename.kube-system
+     
      kubectl get service --namespace=kube-system # get service name
-     kubectl get endpoints --namespace=kube-system # show service endpoint
-     kubectl exec -ti dnstools -- time dig @10.96.0.10 kube-dns.kube-system
+     kubectl get endpoints --namespace=kube-system # show service endpoint name
+     kubectl exec -ti dnstools -- time dig @10.96.0.10 kube-dns.kube-system # query by endpoint name
 
-     # Dig for external resources and get time to response
-
+     # Lookup for external resources and get time to response
      kubectl exec -ti dnstools -- time dig @10.96.0.10 google.com
      
 #### 9. Word Sense Disambiguation (WSD) (run of `python ~/tutorial/scripts/ml.py` from command line)
